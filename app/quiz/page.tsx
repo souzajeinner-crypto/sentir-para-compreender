@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 
-/* ── Quiz themes ── */
 const quizThemes = [
   { id: "emocoes", icon: "😊", title: "Emoções", desc: "Teste seus conhecimentos sobre emoções, sentimentos e inteligência emocional.", questions: 10, difficulty: "Fácil", color: "#E35CC7" },
   { id: "autismo", icon: "🧩", title: "Autismo", desc: "Descubra mais sobre o autismo, características, mitos e inclusão.", questions: 15, difficulty: "Médio", color: "#8B5CFF" },
@@ -39,7 +38,11 @@ const whyQuiz = [
   "Diversão com propósito",
 ];
 
-const diffColor: Record<string, string> = { "Fácil": "text-emerald-400 border-emerald-500/20 bg-emerald-500/5", "Médio": "text-amber-400 border-amber-500/20 bg-amber-500/5", "Difícil": "text-rose-400 border-rose-500/20 bg-rose-500/5" };
+const diffColor: Record<string, string> = {
+  "Fácil": "text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
+  "Médio": "text-amber-400 border-amber-500/20 bg-amber-500/5",
+  "Difícil": "text-rose-400 border-rose-500/20 bg-rose-500/5"
+};
 
 export default function QuizPage() {
   return (
@@ -58,7 +61,8 @@ export default function QuizPage() {
           </ol>
         </nav>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
+          {/* Texto */}
           <div className="flex-1 lg:max-w-[520px]">
             <span className="inline-flex items-center gap-2 rounded-full bg-violet-600/10 border border-violet-500/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-5">
               Quiz ⭐
@@ -82,44 +86,14 @@ export default function QuizPage() {
             </div>
           </div>
 
-          {/* Hero illustration */}
+          {/* Imagem */}
           <div className="flex-1 flex items-center justify-center relative">
-            <div className="absolute w-[300px] h-[300px] rounded-full opacity-20 animate-pulse-glow" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.4), transparent 65%)" }} aria-hidden="true" />
-            <svg viewBox="0 0 380 300" fill="none" className="relative w-full max-w-sm" aria-label="Ilustração: quiz interativo com mascotes">
-              {/* Quiz clipboard */}
-              <g transform="translate(140, 30)">
-                <rect x="0" y="0" width="100" height="130" rx="10" fill="#161930" stroke="rgba(139,92,255,0.3)" strokeWidth="1.5"/>
-                <text x="50" y="20" textAnchor="middle" fill="#8B5CFF" fontSize="10" fontWeight="700" opacity="0.7">QUIZ</text>
-                {[35, 55, 75, 95].map((y, i) => (
-                  <g key={i}><circle cx="20" cy={y} r="6" fill={i < 2 ? "rgba(139,92,255,0.15)" : "none"} stroke={i < 2 ? "#8B5CFF" : "#2d2260"} strokeWidth="1"/>{i < 2 && <text x="20" y={y+3.5} textAnchor="middle" fill="#8B5CFF" fontSize="7" fontWeight="700">{String.fromCharCode(65+i)}</text>}<line x1="32" y1={y} x2={80-i*5} y2={y} stroke="#2d2260" strokeWidth="1"/></g>
-                ))}
-              </g>
-              {/* Brain with glasses */}
-              <g transform="translate(130, 190)">
-                <ellipse cx="0" cy="0" rx="30" ry="26" fill="#161930" stroke="rgba(227,92,199,0.25)" strokeWidth="1.2"/>
-                <circle cx="-8" cy="-3" r="6" fill="none" stroke="#8B5CFF" strokeWidth="1.2"/><circle cx="8" cy="-3" r="6" fill="none" stroke="#8B5CFF" strokeWidth="1.2"/>
-                <line x1="-2" y1="-3" x2="2" y2="-3" stroke="#8B5CFF" strokeWidth="1"/><circle cx="-8" cy="-3" r="2" fill="#8B5CFF" opacity="0.5"/><circle cx="8" cy="-3" r="2" fill="#8B5CFF" opacity="0.5"/>
-                <path d="M-5 8 Q0 13 5 8" fill="none" stroke="#E35CC7" strokeWidth="1" opacity="0.4"/>
-              </g>
-              {/* Star mascot */}
-              <g transform="translate(290, 120)">
-                <path d="M0-18L5-6 18-6 8 2 12 16 0 8-12 16-8 2-18-6-5-6Z" fill="#161930" stroke="rgba(245,184,78,0.3)" strokeWidth="1.2"/>
-                <circle cx="-4" cy="-2" r="1.5" fill="#F5B84E" opacity="0.5"/><circle cx="4" cy="-2" r="1.5" fill="#F5B84E" opacity="0.5"/>
-                <path d="M-3 3 Q0 6 3 3" fill="none" stroke="#F5B84E" strokeWidth="0.8" opacity="0.4"/>
-              </g>
-              {/* Particles */}
-              <circle cx="60" cy="50" r="1.5" fill="#8B5CFF" opacity="0.4"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/></circle>
-              <circle cx="340" cy="80" r="2" fill="#E35CC7" opacity="0.3"/>
-              <circle cx="50" cy="250" r="1.5" fill="#F5B84E" opacity="0.4"/>
-            </svg>
-          </div>
-
-          {/* Sidebar quote */}
-          <div className="hidden xl:flex flex-col items-center justify-center w-48 flex-shrink-0">
-            <div className="glass-card p-5 text-center">
-              <p className="text-sm italic leading-relaxed text-[var(--text-secondary)]">Cada resposta é um passo para um mundo mais empático e inclusivo.</p>
-              <span className="block mt-3 text-lg" aria-hidden="true">💜</span>
-            </div>
+            <div className="absolute w-[480px] h-[480px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.45), transparent 65%)" }} aria-hidden="true" />
+            <img
+              src="/images/personagens-quiz.png.png"
+              alt="Mascotes do quiz: cérebro com prancheta, mundo e estrela"
+              className="relative w-full max-w-lg drop-shadow-2xl"
+            />
           </div>
         </div>
       </section>
@@ -134,7 +108,6 @@ export default function QuizPage() {
               <div className="section-heading-line mt-2" style={{ margin: "8px 0 0" }} />
             </div>
 
-            {/* Quiz grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {quizThemes.map((q) => (
                 <Link key={q.id} href={`/quiz`} className="glass-card p-5 group transition-all hover:scale-[1.02]">
@@ -150,7 +123,6 @@ export default function QuizPage() {
               ))}
             </div>
 
-            {/* Conquistas banner */}
             <div className="glass-card p-6 flex flex-col sm:flex-row items-center gap-4 mb-10" style={{ borderColor: "rgba(245,184,78,0.2)", background: "linear-gradient(135deg, rgba(245,184,78,0.04), transparent)" }}>
               <span className="text-3xl" aria-hidden="true">🏆</span>
               <div className="flex-1 text-center sm:text-left">
@@ -162,7 +134,6 @@ export default function QuizPage() {
               </Link>
             </div>
 
-            {/* Como funciona */}
             <section>
               <h2 className="font-display text-display-lg font-bold text-[var(--text-primary)] text-center mb-8">Como funciona?</h2>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -179,7 +150,6 @@ export default function QuizPage() {
 
           {/* ══ SIDEBAR ══ */}
           <aside className="lg:w-72 xl:w-80 flex-shrink-0 space-y-5">
-            {/* Desafie-se */}
             <div className="glass-card p-5 overflow-hidden relative" style={{ borderColor: "rgba(139,92,255,0.2)" }}>
               <div className="absolute top-0 right-0 w-20 h-20 opacity-10" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.5), transparent)" }} aria-hidden="true" />
               <h3 className="text-sm font-bold text-[var(--text-primary)] mb-1">Desafie-se diariamente!</h3>
@@ -189,7 +159,6 @@ export default function QuizPage() {
               </Link>
             </div>
 
-            {/* Ranking */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-4">Ranking de participantes</h3>
               <div className="space-y-2.5">
@@ -207,7 +176,6 @@ export default function QuizPage() {
               </Link>
             </div>
 
-            {/* Por que fazer quizzes */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-3">Por que fazer quizzes?</h3>
               <ul className="space-y-2" role="list">
@@ -220,7 +188,6 @@ export default function QuizPage() {
               </ul>
             </div>
 
-            {/* Sugira um tema */}
             <div className="glass-card p-5" style={{ borderColor: "rgba(227,92,199,0.15)" }}>
               <h3 className="text-sm font-bold text-[var(--text-primary)] mb-1">Sugira um tema</h3>
               <p className="text-xs text-[var(--text-muted)] mb-3">Tem um tema que gostaria de ver por aqui? Conta pra gente!</p>
