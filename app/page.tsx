@@ -119,7 +119,7 @@ export default function HomePage() {
             <img
               src="/images/inicio.png.png"
               alt="Mascotes do projeto"
-              className="w-32 h-32 object-contain"
+              className="w-full max-w-[220px] object-contain"
             />
             <h3 className="font-display text-2xl font-bold text-[var(--text-primary)]">
               Projeto em<br />desenvolvimento
@@ -146,7 +146,7 @@ export default function HomePage() {
 
           {/* Card com CTA */}
           <div className="glass-card p-8 flex flex-col gap-4" style={{ background: "linear-gradient(135deg, rgba(109,57,255,0.25) 0%, rgba(31,18,81,0.82) 100%)" }}>
-            <div className="w-14 h-14 flex items-center justify-center">
+            <div className="w-24 h-24 flex items-center justify-center">
               <img src="/images/polvo.png.png" alt="" aria-hidden="true" className="w-full h-full object-contain" />
             </div>
             <h3 className="font-display text-xl font-bold text-[var(--text-primary)]">Você não<br />está sozinho.</h3>
