@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-/* ── Perspectives data ── */
 const perspectives = [
   {
     id: "p01", title: "Educação inclusiva para todos",
@@ -55,7 +54,7 @@ export default function PerspectivasPage() {
           </ol>
         </nav>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
           <div className="flex-1 lg:max-w-[520px]">
             <span className="inline-flex items-center gap-2 rounded-full bg-violet-600/10 border border-violet-500/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-5">
               Perspectivas ⭐
@@ -80,66 +79,14 @@ export default function PerspectivasPage() {
             </div>
           </div>
 
-          {/* Hero illustration */}
+          {/* Hero image */}
           <div className="flex-1 flex items-center justify-center relative">
-            <div className="absolute w-[320px] h-[320px] rounded-full opacity-20 animate-pulse-glow" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.4), transparent 65%)" }} aria-hidden="true" />
-            <svg viewBox="0 0 380 340" fill="none" className="relative w-full max-w-sm" aria-label="Ilustração: cérebro e mascote unidos por ideias">
-              {/* Brain character */}
-              <g transform="translate(160, 140)">
-                <ellipse cx="0" cy="0" rx="50" ry="44" fill="#161930" stroke="rgba(227,92,199,0.3)" strokeWidth="1.5"/>
-                <path d="M-18 8c0-20 9-32 18-32s18 12 18 32" fill="none" stroke="#E35CC7" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-                <path d="M-25 -4c-7 0-10-4-10-10s5-10 10-8M29 -4c7 0 10-4 10-10s-5-10-10-8" fill="none" stroke="#E35CC7" strokeWidth="1.2" strokeLinecap="round" opacity="0.4"/>
-                <circle cx="-12" cy="-4" r="3.5" fill="#8B5CFF" opacity="0.5"/>
-                <circle cx="12" cy="-4" r="3.5" fill="#8B5CFF" opacity="0.5"/>
-                <circle cx="-11" cy="-5" r="1.2" fill="white" opacity="0.3"/>
-                <circle cx="13" cy="-5" r="1.2" fill="white" opacity="0.3"/>
-                <path d="M-7 10 Q0 17 7 10" fill="none" stroke="#E35CC7" strokeWidth="1.2" strokeLinecap="round" opacity="0.4"/>
-              </g>
-
-              {/* Companion mascot (turtle/Tito) */}
-              <g transform="translate(270, 190)">
-                <ellipse cx="0" cy="5" rx="22" ry="18" fill="#161930" stroke="rgba(20,184,166,0.25)" strokeWidth="1.2"/>
-                <circle cx="0" cy="-12" r="14" fill="#161930" stroke="rgba(20,184,166,0.25)" strokeWidth="1.2"/>
-                <circle cx="-5" cy="-14" r="2" fill="#14b8a6" opacity="0.5"/>
-                <circle cx="5" cy="-14" r="2" fill="#14b8a6" opacity="0.5"/>
-                <path d="M-3 -8 Q0 -5 3 -8" fill="none" stroke="#14b8a6" strokeWidth="0.8" opacity="0.4"/>
-                {/* Shell pattern */}
-                <path d="M-10 0 Q0 -12 10 0" fill="none" stroke="rgba(20,184,166,0.15)" strokeWidth="1"/>
-                <path d="M-6 3 Q0 -5 6 3" fill="none" stroke="rgba(20,184,166,0.1)" strokeWidth="0.8"/>
-              </g>
-
-              {/* Connection between brain and mascot */}
-              <path d="M200 145 Q235 140 250 175" fill="none" stroke="rgba(139,92,255,0.12)" strokeWidth="1" strokeDasharray="3 4"/>
-
-              {/* Floating idea bubbles */}
-              <g transform="translate(100, 60)" opacity="0.5">
-                <circle r="14" fill="rgba(139,92,255,0.06)" stroke="rgba(139,92,255,0.15)" strokeWidth="1"/>
-                <text x="0" y="4" textAnchor="middle" fontSize="10" fill="#8B5CFF" opacity="0.6">💡</text>
-              </g>
-              <g transform="translate(300, 60)" opacity="0.4">
-                <circle r="12" fill="rgba(227,92,199,0.06)" stroke="rgba(227,92,199,0.15)" strokeWidth="1"/>
-                <text x="0" y="4" textAnchor="middle" fontSize="9" fill="#E35CC7" opacity="0.6">✨</text>
-              </g>
-              <g transform="translate(330, 130)" opacity="0.45">
-                <circle r="10" fill="rgba(245,184,78,0.06)" stroke="rgba(245,184,78,0.12)" strokeWidth="1"/>
-                <text x="0" y="3" textAnchor="middle" fontSize="8" fill="#F5B84E" opacity="0.5">🌟</text>
-              </g>
-
-              {/* Particles */}
-              <circle cx="60" cy="100" r="1.5" fill="#8B5CFF" opacity="0.4"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/></circle>
-              <circle cx="340" cy="250" r="2" fill="#E35CC7" opacity="0.3"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/></circle>
-              <circle cx="80" cy="280" r="1.5" fill="#14b8a6" opacity="0.3"/>
-            </svg>
-          </div>
-
-          {/* Sidebar quote */}
-          <div className="hidden xl:flex flex-col items-center justify-center w-48 flex-shrink-0">
-            <div className="glass-card p-5 text-center">
-              <p className="text-sm italic leading-relaxed text-[var(--text-secondary)]">
-                Pequenas mudanças de perspectiva geram grandes transformações.
-              </p>
-              <span className="block mt-3 text-lg" aria-hidden="true">💜</span>
-            </div>
+            <div className="absolute w-[480px] h-[480px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.45), transparent 65%)" }} aria-hidden="true" />
+            <img
+              src="/images/relatos.png.png"
+              alt="Mascotes representando perspectivas e histórias inclusivas"
+              className="relative w-full max-w-lg drop-shadow-2xl"
+            />
           </div>
         </div>
       </section>
@@ -158,12 +105,9 @@ export default function PerspectivasPage() {
               {perspectives.map((p) => (
                 <article key={p.id} className="glass-card p-6">
                   <div className="flex items-start gap-5">
-                    {/* Icon */}
                     <div className="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl" style={{ backgroundColor: p.color + "12", border: `1px solid ${p.color}22` }} aria-hidden="true">
                       {p.icon}
                     </div>
-
-                    {/* Content */}
                     <div className="flex-1">
                       <h3 className="text-base font-bold text-[var(--text-primary)]">{p.title}</h3>
                       <p className="text-sm text-[var(--text-secondary)] mt-1.5 leading-relaxed">{p.desc}</p>
@@ -173,8 +117,6 @@ export default function PerspectivasPage() {
                         ))}
                       </div>
                     </div>
-
-                    {/* Arrow */}
                     <div className="flex-shrink-0 hidden sm:flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border-glass)] text-[var(--text-muted)] hover:border-[var(--border-glass-strong)] hover:text-[var(--text-primary)] transition-all cursor-pointer">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9,6 15,12 9,18"/></svg>
                     </div>
@@ -193,7 +135,6 @@ export default function PerspectivasPage() {
 
           {/* ══ SIDEBAR ══ */}
           <aside className="lg:w-72 xl:w-80 flex-shrink-0 space-y-5">
-            {/* Explore por tema */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-3">Explore por tema</h3>
               <div className="space-y-1">
@@ -208,7 +149,6 @@ export default function PerspectivasPage() {
               </div>
             </div>
 
-            {/* Participe */}
             <div className="glass-card p-5 overflow-hidden relative" style={{ borderColor: "rgba(227,92,199,0.2)", background: "linear-gradient(135deg, rgba(227,92,199,0.04), transparent)" }}>
               <div className="absolute top-0 right-0 w-24 h-24 opacity-10" style={{ background: "radial-gradient(circle, rgba(227,92,199,0.5), transparent)" }} aria-hidden="true" />
               <h3 className="text-sm font-bold text-[var(--text-primary)] mb-2">Participe da mudança!</h3>
@@ -219,7 +159,6 @@ export default function PerspectivasPage() {
               </Link>
             </div>
 
-            {/* Jornal */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-rose-400 mb-1">Jornal dos Bichinhos</h3>
               <p className="text-[11px] text-[var(--text-muted)] mb-3">Histórias e novidades contadas pelos nossos amigos!</p>
@@ -228,7 +167,6 @@ export default function PerspectivasPage() {
               </Link>
             </div>
 
-            {/* Podcast */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-1">Podcast do Sentir</h3>
               <p className="text-[11px] text-[var(--text-muted)] mb-3">Conversas e aprendizados para ouvir quando quiser!</p>
@@ -237,7 +175,6 @@ export default function PerspectivasPage() {
               </Link>
             </div>
 
-            {/* Futuro que acolhe */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-1">Futuro que acolhe</h3>
               <p className="text-[11px] text-[var(--text-muted)]">
