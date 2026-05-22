@@ -94,22 +94,12 @@ export default function TeoriaPage() {
 
           {/* Hero right — imagem */}
           <div className="flex-1 flex items-center justify-center relative">
-            <div className="absolute w-[380px] h-[380px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.45), transparent 65%)" }} aria-hidden="true" />
+            <div className="absolute w-[480px] h-[480px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.45), transparent 65%)" }} aria-hidden="true" />
             <img
               src="/images/Avaliação-psicologica.png.png"
               alt="Ilustração de avaliação psicológica com mascotes"
-              className="relative w-full max-w-sm drop-shadow-2xl"
+              className="relative w-full max-w-lg drop-shadow-2xl"
             />
-          </div>
-
-          {/* Hero sidebar quote */}
-          <div className="hidden xl:flex flex-col items-center justify-center w-48 flex-shrink-0">
-            <div className="glass-card p-5 text-center">
-              <p className="text-sm italic leading-relaxed text-[var(--text-secondary)]">
-                Cada pessoa é única, e cada história merece ser compreendida.
-              </p>
-              <span className="block mt-3 text-lg" aria-hidden="true">💜</span>
-            </div>
           </div>
         </div>
       </section>
