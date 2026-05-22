@@ -92,38 +92,14 @@ export default function TeoriaPage() {
             </div>
           </div>
 
-          {/* Hero right — illustration */}
+          {/* Hero right — imagem */}
           <div className="flex-1 flex items-center justify-center relative">
-            <div className="absolute w-[350px] h-[350px] rounded-full opacity-20 animate-pulse-glow" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.4), transparent 65%)" }} aria-hidden="true" />
-            <svg viewBox="0 0 400 350" fill="none" className="relative w-full max-w-sm" aria-label="Ilustração de avaliação psicológica">
-              {/* Clipboard */}
-              <rect x="100" y="30" width="200" height="260" rx="16" fill="#161930" stroke="rgba(139,92,255,0.3)" strokeWidth="1.5"/>
-              <rect x="160" y="18" width="80" height="24" rx="6" fill="#161930" stroke="rgba(139,92,255,0.3)" strokeWidth="1.5"/>
-              <circle cx="200" cy="30" r="4" fill="#8B5CFF" opacity="0.5"/>
-              {/* Title on clipboard */}
-              <text x="200" y="72" textAnchor="middle" fill="#8B5CFF" fontSize="9" fontWeight="600" fontFamily="Inter" opacity="0.7">AVALIAÇÃO PSICOLÓGICA</text>
-              {/* Checkmarks */}
-              {[90, 115, 140, 165, 190].map((y, i) => (
-                <g key={i}>
-                  <rect x="125" y={y} width="14" height="14" rx="3" stroke={i < 3 ? "#8B5CFF" : "#2d2260"} strokeWidth="1.2" fill={i < 3 ? "rgba(139,92,255,0.1)" : "none"}/>
-                  {i < 3 && <path d={`M${128} ${y+7}l2.5 2.5 4-4`} stroke="#8B5CFF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>}
-                  <line x1="148" y1={y+7} x2={280 - i*8} y2={y+7} stroke="#2d2260" strokeWidth="1" strokeLinecap="round"/>
-                </g>
-              ))}
-              {/* Brain illustration */}
-              <g transform="translate(200, 245)">
-                <ellipse cx="0" cy="0" rx="28" ry="24" fill="rgba(227,92,199,0.1)" stroke="#E35CC7" strokeWidth="1" opacity="0.6"/>
-                <path d="M-8 8c0-10 5-16 8-16s8 6 8 16M-12 0c-4 0-6-3-6-6s3-6 6-5M16 0c4 0 6-3 6-6s-3-6-6-5" fill="none" stroke="#E35CC7" strokeWidth="1.2" strokeLinecap="round" opacity="0.5"/>
-                <circle cx="-6" cy="-2" r="1" fill="#E35CC7" opacity="0.4"/>
-                <circle cx="6" cy="-4" r="1" fill="#E35CC7" opacity="0.4"/>
-                <circle cx="0" cy="4" r="1" fill="#E35CC7" opacity="0.4"/>
-              </g>
-              {/* Floating elements */}
-              <circle cx="60" cy="80" r="2" fill="#8B5CFF" opacity="0.4"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/></circle>
-              <circle cx="340" cy="60" r="1.5" fill="#E35CC7" opacity="0.4"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/></circle>
-              <circle cx="350" cy="200" r="2" fill="#F5B84E" opacity="0.3"/>
-              <circle cx="50" cy="250" r="1.5" fill="#73B8FF" opacity="0.4"/>
-            </svg>
+            <div className="absolute w-[380px] h-[380px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, rgba(139,92,255,0.45), transparent 65%)" }} aria-hidden="true" />
+            <img
+              src="/images/Avaliação-psicologica.png.png"
+              alt="Ilustração de avaliação psicológica com mascotes"
+              className="relative w-full max-w-sm drop-shadow-2xl"
+            />
           </div>
 
           {/* Hero sidebar quote */}
@@ -145,7 +121,6 @@ export default function TeoriaPage() {
           <div className="flex-1 min-w-0">
             {/* O que é + Para que serve */}
             <div className="grid gap-6 md:grid-cols-2 mb-10">
-              {/* O que é */}
               <div className="glass-card p-7">
                 <h2 className="font-display text-display-lg font-bold text-[var(--text-primary)] mb-4">O que é a avaliação psicológica?</h2>
                 <p className="text-sm leading-[1.8] text-[var(--text-secondary)] mb-6">
@@ -164,7 +139,6 @@ export default function TeoriaPage() {
                 </div>
               </div>
 
-              {/* Para que serve */}
               <div className="glass-card p-7">
                 <h2 className="font-display text-display-lg font-bold text-[var(--text-primary)] mb-4">Para que serve?</h2>
                 <ul className="space-y-3" role="list">
@@ -210,7 +184,6 @@ export default function TeoriaPage() {
 
             {/* Bottom cards */}
             <div className="grid gap-6 md:grid-cols-2 mb-10">
-              {/* Motivational */}
               <div className="glass-card p-7 flex items-start gap-4" style={{ borderColor: "rgba(227,92,199,0.15)" }}>
                 <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-rose-500/10 text-3xl flex-shrink-0" aria-hidden="true">🧠</span>
                 <div>
@@ -221,7 +194,6 @@ export default function TeoriaPage() {
                 </div>
               </div>
 
-              {/* Importante lembrar */}
               <div className="glass-card p-7">
                 <h3 className="font-display text-lg font-bold text-[var(--text-primary)] mb-3">Importante lembrar</h3>
                 <ul className="space-y-2" role="list">
@@ -242,7 +214,6 @@ export default function TeoriaPage() {
 
           {/* ══ SIDEBAR ══ */}
           <aside className="lg:w-72 xl:w-80 flex-shrink-0 space-y-5">
-            {/* Ferramentas rápidas */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
                 <span className="text-lg" aria-hidden="true">🛠️</span> Ferramentas rápidas
@@ -260,7 +231,6 @@ export default function TeoriaPage() {
               </div>
             </div>
 
-            {/* Precisa de apoio */}
             <div className="glass-card p-5" style={{ borderColor: "rgba(227,92,199,0.2)", background: "linear-gradient(135deg, rgba(227,92,199,0.04), transparent)" }}>
               <h3 className="text-sm font-bold text-[var(--text-primary)] mb-2">Precisa de apoio?</h3>
               <p className="text-xs text-[var(--text-muted)] mb-3">Se você ou alguém que conhece precisa conversar, busque ajuda.</p>
@@ -270,7 +240,6 @@ export default function TeoriaPage() {
               </Link>
             </div>
 
-            {/* Jornal dos Bichinhos */}
             <div className="glass-card p-5 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-20 h-20 opacity-10" style={{ background: "radial-gradient(circle, rgba(245,158,11,0.4), transparent)" }} aria-hidden="true" />
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-1">Jornal dos Bichinhos</h3>
@@ -280,7 +249,6 @@ export default function TeoriaPage() {
               </Link>
             </div>
 
-            {/* Podcast */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-1">Podcast do Sentir</h3>
               <p className="text-[11px] text-[var(--text-muted)] mb-3">Conversas e aprendizados para ouvir quando quiser!</p>
@@ -289,7 +257,6 @@ export default function TeoriaPage() {
               </Link>
             </div>
 
-            {/* Experiências imersivas */}
             <div className="glass-card p-5">
               <h3 className="font-display text-sm font-bold text-[var(--text-primary)] mb-1">Experiências imersivas</h3>
               <p className="text-[11px] text-[var(--text-muted)] mb-3">Descubra como é vivenciar diferentes situações do dia a dia.</p>
