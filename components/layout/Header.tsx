@@ -51,8 +51,19 @@ function DropdownMenu({ item, isActive }: { item: NavItem; isActive: boolean }) 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  /* Detecta scroll para ativar classe .scrolled */
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => { setMobileMenuOpen(false); }, [pathname]);
 
@@ -69,7 +80,10 @@ export function Header() {
   const isGroupActive = (item: NavItem) => isActive(item.href) || (item.children?.some((c) => isActive(c.href)) ?? false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-glass)] bg-[var(--bg-page)]/92 backdrop-blur-xl">
+    <header
+      ref={headerRef}
+      className={`sticky top-0 z-40 border-b border-[var(--border-glass)] bg-[var(--bg-page)]/92 backdrop-blur-xl transition-all duration-300${scrolled ? " scrolled" : ""}`}
+    >
       <div className="mx-auto w-full max-w-[880px] px-5 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
